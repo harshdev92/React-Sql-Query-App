@@ -1,15 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: "jit",
-  purge: ["./public/**/*.html", "./src/**/*.{js,jsx}"],
-  media: false, 
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        "primary-dark": "#004A7C",
-        "secondary-dark": "#005691",
-        "primary-light": "#E8F1F5",
-        "secondary-light": "#FAFAFA",
+        'primary-color': '#243c5a',
+        'seconday-color': '#647fa1'
       },
       gridTemplateColumns: {
         "layout-desktop": "18rem 1fr",
@@ -22,8 +20,5 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {},
-  },
   plugins: [],
-};
+}
