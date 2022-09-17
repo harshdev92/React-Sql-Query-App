@@ -10,7 +10,11 @@ import CsvDownload from "react-json-to-csv";
 // import { Helmet } from "react-helmet";
 // import { exportToJson } from "../../modules/misc";
 import { Button } from "../general/Button";
-
+import DownloadIcon from "../general/DownloadIcon";
+import DoubleLeftArrowIcon from "../general/DoubleLeftArrowIcon";
+import LeftArrowIcon from "../general/LeftArrowIcon";
+import RightArrowIcon from "../general/RightArrowIcon";
+import DoubleRIghtArrowIcon from "../general/DoubleRightArrowIcon";
 
 const GlobalFilter = ({
   preGlobalFilteredRows,
@@ -88,41 +92,13 @@ const Table = ({ columns, data, completeData, query }) => {
             data={completeData}
             filename={`${query}.csv`}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-2 inline"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <title id="download">Download CSV</title>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-              />
-            </svg>{" "}
+            <DownloadIcon label={'Download CSV'} />
             CSV
           </CsvDownload>
           <Button handleClick={() => console.log('test')} 
                  className="bg-primary-color hover:bg-seconday-color transition-colors text-white rounded-md
                         font-semibold px-4 py-2 my-4 shadow-lg fas fa-play">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-2 inline"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <title id="download">Download JSON</title>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-              />
-            </svg>
+            <DownloadIcon label={'Download JSON'} />
             JSON
           </Button>
         </div>
@@ -226,19 +202,7 @@ const Table = ({ columns, data, completeData, query }) => {
                 disabled={!canPreviousPage}
               >
                 <span className="sr-only">First</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <title id="pageOne">Go to page one</title>
-                  <path
-                    fillRule="evenodd"
-                    d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <DoubleLeftArrowIcon label={'Go To Page One'}/>
               </Button>
               <Button
                 onClick={() => previousPage()}
@@ -247,36 +211,12 @@ const Table = ({ columns, data, completeData, query }) => {
 
               >
                 <span className="sr-only">Previous</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <title id="previousPage">Go to previous page</title>
-                  <path
-                    fillRule="evenodd"
-                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <LeftArrowIcon label="Go to previous page" />
               </Button>
               <Button onClick={() => nextPage()} disabled={!canNextPage} className={"relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"}
 >
                 <span className="sr-only">Next</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <title id="nextPage">Go to next page</title>
-                  <path
-                    fillRule="evenodd"
-                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+               <RightArrowIcon label='Go to next page' />
               </Button>
               <Button
                 className={"rounded-r-md relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"}
@@ -284,24 +224,7 @@ const Table = ({ columns, data, completeData, query }) => {
                 disabled={!canNextPage}
               >
                 <span className="sr-only">Last</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <title id="lastPage">Go to last page</title>
-                  <path
-                    fillRule="evenodd"
-                    d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <DoubleRIghtArrowIcon label="Go to last page" />
               </Button>
             </nav>
           </div>
