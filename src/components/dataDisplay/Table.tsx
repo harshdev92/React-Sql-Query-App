@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   useTable,
   useGlobalFilter,
@@ -6,8 +5,6 @@ import {
   usePagination,
 } from "react-table";
 import CsvDownload from "react-json-to-csv";
-// import { Helmet } from "react-helmet";
-// import { exportToJson } from "../../modules/misc";
 import { Button } from "../general/Button";
 import DownloadIcon from "../general/DownloadIcon";
 import DoubleLeftArrowIcon from "../general/DoubleLeftArrowIcon";
@@ -22,9 +19,6 @@ type TableProps = {
   completeData: any;
   query: string
 }; 
-
-
-
 
 const Table = ({ columns, data, completeData, query }: TableProps) => {
   const {
@@ -53,6 +47,17 @@ const Table = ({ columns, data, completeData, query }: TableProps) => {
     useSortBy,
     usePagination
   );
+
+
+  const handleJsonDownload = (completeData:any, query:string) => {
+    let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(completeData));
+    var link = document.createElement('a')
+    link?.setAttribute("href",     dataStr     );
+    link?.setAttribute("download", `${query}.json`);
+    link?.click();
+  };
+
+  
   return (
     <>
       <div className="flex justify-between items-center">
@@ -70,7 +75,7 @@ const Table = ({ columns, data, completeData, query }: TableProps) => {
             <DownloadIcon label={'Download CSV'} />
             CSV
           </CsvDownload>
-          <Button onClick={() => console.log('test')} 
+          <Button onClick={() => handleJsonDownload(completeData, query)} 
                  className="bg-primary-color hover:bg-seconday-color transition-colors text-white rounded-md
                         font-semibold px-4 py-2 my-4 shadow-lg fas fa-play">
             <DownloadIcon label={'Download JSON'} />
