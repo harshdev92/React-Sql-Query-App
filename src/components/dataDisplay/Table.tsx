@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   useTable,
   useGlobalFilter,
-  useAsyncDebounce,
   useSortBy,
   usePagination,
 } from "react-table";
@@ -15,43 +14,19 @@ import DoubleLeftArrowIcon from "../general/DoubleLeftArrowIcon";
 import LeftArrowIcon from "../general/LeftArrowIcon";
 import RightArrowIcon from "../general/RightArrowIcon";
 import DoubleRIghtArrowIcon from "../general/DoubleRightArrowIcon";
+import GlobalFilter from "../dataEntry/GlobalFilter";
 
-const GlobalFilter = ({
-  preGlobalFilteredRows,
-  globalFilter,
-  setGlobalFilter,
-}) => {
-  const count = preGlobalFilteredRows.length;
-  const [value, setValue] = useState(globalFilter);
-  const onChange = useAsyncDebounce((value) => {
-    setGlobalFilter(value || undefined);
-  }, 200);
+type TableProps = {
+  columns: any;
+  data: any;
+  completeData: any;
+  query: string
+}; 
 
-  return (
-    <>
-      {/* <p>
-        <title>{`${count} Records found || React SQL Editor`}</title>
-      </p> */}
-      <label className="flex gap-x-2 items-baseline">
-        <span className="text-primary-color hidden md:inline-block font-semibold">
-          Search:{" "}
-        </span>
-        <input
-          type="text"
-          className="text-primary-color rounded-md shadow-sm outline-none border-2 border-gray-300 focus:border-primary-color transition p-2 w-40 md:w-52 "
-          value={value || ""}
-          onChange={(e) => {
-            setValue(e.target.value);
-            onChange(e.target.value);
-          }}
-          placeholder={`${count} records...`}
-        />
-      </label>
-    </>
-  );
-};
 
-const Table = ({ columns, data, completeData, query }) => {
+
+
+const Table = ({ columns, data, completeData, query }: TableProps) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -95,7 +70,7 @@ const Table = ({ columns, data, completeData, query }) => {
             <DownloadIcon label={'Download CSV'} />
             CSV
           </CsvDownload>
-          <Button handleClick={() => console.log('test')} 
+          <Button onClick={() => console.log('test')} 
                  className="bg-primary-color hover:bg-seconday-color transition-colors text-white rounded-md
                         font-semibold px-4 py-2 my-4 shadow-lg fas fa-play">
             <DownloadIcon label={'Download JSON'} />
@@ -111,9 +86,9 @@ const Table = ({ columns, data, completeData, query }) => {
           className="min-w-full divide-y divide-gray-200"
         >
           <thead className="bg-primary-color">
-            {headerGroups.map((headerGroup) => (
+            {headerGroups.map((headerGroup:any) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
+                {headerGroup.headers.map((column:any) => (
                   <th
                     scope="col"
                     className="px-6 py-4 text-left text-xs font-medium text-white  uppercase tracking-wider"
@@ -138,11 +113,11 @@ const Table = ({ columns, data, completeData, query }) => {
             {...getTableBodyProps()}
             className="bg-white text-black divide-y divide-gray-200"
           >
-            {page.map((row, i) => {
+            {page.map((row:any, i:any) => {
               prepareRow(row);
               return (
                 <tr {...row.getRowProps()}>
-                  {row.cells.map((cell) => {
+                  {row.cells.map((cell:any) => {
                     return (
                       <td
                         {...cell.getCellProps()}
@@ -162,12 +137,12 @@ const Table = ({ columns, data, completeData, query }) => {
       <div className="py-3 flex items-center justify-between">
         <div className="flex-1 flex justify-between sm:hidden">
           <Button
-            handleClick={() => previousPage()}
+            onClick={() => previousPage()}
             disabled={!canPreviousPage}
           >
             Previous
           </Button>
-          <Button handleClick={() => nextPage()} disabled={!canNextPage}>
+          <Button onClick={() => nextPage()} disabled={!canNextPage}>
             Next
           </Button>
         </div>

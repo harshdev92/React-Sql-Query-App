@@ -1,8 +1,7 @@
 import React, { useMemo } from "react";
 import usetableData from "../../hooks/useData";
 import Table from "./Table";
-
-// import Loader from "../../assets/imgs/loader.svg";
+import Loader from "../../assets/image/loader.svg";
 
 
 type TableComponentProps = {
@@ -58,7 +57,7 @@ const TableComponent = React.memo(({ query }: TableComponentProps) => {
             />
           </>
         ) : (
-          <img src={''} className="w-20 mx-auto" alt="loader" />
+          <img src={Loader} className="w-20 mx-auto" alt="loader" />
         )}
       </section>
     </>

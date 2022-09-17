@@ -53,7 +53,7 @@ const QueryInput = ({setQuery, value, setValue} : QueryInputProps) =>  {
             
       />
     </label>
-    <Button handleClick={onSubmit} className="bg-primary-color hover:bg-seconday-color transition-colors text-white rounded-md font-semibold px-4 py-2 my-4 shadow-lg fas fa-play">
+    <Button onClick={onSubmit} className="bg-primary-color hover:bg-seconday-color transition-colors text-white rounded-md font-semibold px-4 py-2 my-4 shadow-lg fas fa-play">
       <PlayIcon />
       Run Query
     </Button>

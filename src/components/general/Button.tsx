@@ -4,16 +4,18 @@ type ButtonProps = {
   className?: string;
   children?: any;
   rest?: object,
-  handleClick?: any
+  onClick?: any,
+  disabled?: boolean
 }; 
 
 
-export const Button = ({ children, className, handleClick,...rest }: ButtonProps) => {
+export const Button = ({ children, className, onClick,disabled,...rest }: ButtonProps) => {
   return (
     <button
       type="button"
       className={className}
-      onClick={handleClick}
+      onClick={onClick}
+      disabled={disabled}
       {...rest}
     >
       {children}
