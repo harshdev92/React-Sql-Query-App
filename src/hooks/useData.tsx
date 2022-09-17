@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import alasql from "alasql";
 import toast from "react-hot-toast";
-import TABLE_NAMES from "../constants/constants";
+import TABLE_NAMES from "../constants/tableName";
 
-const getTableData = (name) =>
+
+const getApiURL = (name: string) =>
   `https://api.github.com/repos/graphql-compose/graphql-compose-examples/contents/examples/northwind/data/csv/${name}.csv`;
 
-const GetTableData = (tableName) => {
-  const [data, setData] = useState([]);
+const useData = (tableName: string) => {
+  const [data, setData] = useState<any[]>([]);
   const [error, setError] = useState(false);
-  const [runtime, setRuntime] = useState("");
-  const convertToJson = (data) => {
+  const [runtime, setRuntime] = useState(0);
+  const convertToJson = (data:any) => {
     alasql
       .promise("SELECT * FROM CSV(?, {headers: false, separator:','})", [data])
       .then((data) => {
@@ -23,12 +24,12 @@ const GetTableData = (tableName) => {
   };
 
   useEffect(() => {
-    const fetchData = (tableName) => {
+    const fetchData = (tableName: string) => {
       setData([]);
       const name = TABLE_NAMES.find((name) => name === tableName);
       if (name) {
         setError(false);
-        fetch(getURL(tableName), {
+        fetch(getApiURL(tableName), {
           headers: {
             Accept: "application/vnd.github.v4+raw",
           },
@@ -58,4 +59,4 @@ const GetTableData = (tableName) => {
   return { data, runtime, error };
 };
 
-export default getTableData;
+export default useData;

@@ -7,15 +7,22 @@ import "ace-builds/src-noconflict/ext-language_tools"
 import { Button } from "../general/Button";
 import { ReactComponent as PlayIcon } from './../../assets/image/playIcon.svg'
 
+type QueryInputProps = {
+  setQuery: Function;
+  value: string;
+  setValue: Function
+}; 
 
-function QueryInput() {
-  const onChange = (newValue:string) => {
-    console.log("change", newValue);
-  }
+
+const QueryInput = ({setQuery, value, setValue} : QueryInputProps) =>  {
+  const onChange = (newValue: string) => {
+    setValue(newValue);
+  };
 
   const onSubmit = () => {
-    console.log("submit");
-  }
+    var Z = value.toLowerCase().slice(value.indexOf("from") + "from".length);
+    setQuery(Z.split(" ")[1]);
+  };
 
 
   return (
@@ -27,6 +34,7 @@ function QueryInput() {
         aria-label="query-editor"
         mode="mysql"
         theme="tomorrow"
+        value={value}
         onChange={onChange}
         name="query-editor"
         editorProps={{ $blockScrolling: true }}
@@ -45,7 +53,7 @@ function QueryInput() {
             
       />
     </label>
-    <Button handleClick={onSubmit} className="fas fa-play">
+    <Button onClick={onSubmit} className="bg-primary-color hover:bg-seconday-color transition-colors text-white rounded-md font-semibold px-4 py-2 my-4 shadow-lg fas fa-play">
       <PlayIcon />
       Run Query
     </Button>
