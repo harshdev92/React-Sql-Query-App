@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as GithubIcon } from './../../assets/image/github.svg'
 
 const Header = () => {

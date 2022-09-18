@@ -1,10 +1,6 @@
-import {
-  useTable,
-  useGlobalFilter,
-  useSortBy,
-  usePagination,
-} from "react-table";
+import { useTable, useGlobalFilter, useSortBy, usePagination} from "react-table";
 import CsvDownload from "react-json-to-csv";
+
 import { Button } from "../general/Button";
 import DownloadIcon from "../general/DownloadIcon";
 import DoubleLeftArrowIcon from "../general/DoubleLeftArrowIcon";

@@ -1,6 +1,6 @@
 import React from "react";
-import TABLE_NAMES from "../../constants/tableName";
 
+import TABLE_NAMES from "../../constants/tableName";
 
 type PreBuildQueryListProps = {
     setQuery: Function;

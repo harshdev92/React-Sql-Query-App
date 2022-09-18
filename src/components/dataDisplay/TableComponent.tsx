@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
+import { LoaderIcon } from 'react-hot-toast';
+
 import usetableData from "../../hooks/useData";
 import Table from "./Table";
-import Loader from "../../assets/image/loader.svg";
-
 
 type TableComponentProps = {
   query: string;
@@ -57,7 +57,7 @@ const TableComponent = React.memo(({ query }: TableComponentProps) => {
             />
           </>
         ) : (
-          <img src={Loader} className="w-20 mx-auto" alt="loader" />
+          <LoaderIcon />
         )}
       </section>
     </>
