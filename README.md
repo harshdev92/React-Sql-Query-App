@@ -10,8 +10,8 @@ This respository hosts the codebase for the React Sql Query App - Frontend.
 
 ## Demo
 
-<a href="https://github.com/rishipurwar1/coding-space" target="blank">
-<img src="https://img.shields.io/website?url=https://www.codingspace.codes&logo=github&style=flat-square" />
+<a href="https://harsh-react-sql-query-fe.netlify.app/" target="blank">
+<img src="https://img.shields.io/badge/-Demo-brightgreen" />
 </a>
 
 **Introduction**
