@@ -1,4 +1,3 @@
-import React from "react";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/theme-github";
@@ -34,7 +33,7 @@ const QueryInput = ({setQuery, value, setValue} : QueryInputProps) =>  {
         <AceEditor
         aria-label="query-editor"
         mode="mysql"
-        theme="tomorrow"
+        theme="github"
         value={value}
         onChange={onChange}
         name="query-editor"
