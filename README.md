@@ -4,7 +4,7 @@ This respository hosts the codebase for the React Sql Query App - Frontend.
 this is project is using react js.
 
 **Introduction**
-This application is used for quering database.this support sql query and display data in table with option to download data in csv and json format.
+- This application is used for quering database.this support sql query and display data in table with option to download data in csv and json format.
 
 **Folder Structure**
 - ```src``` - Contains the codebase for the development code.
