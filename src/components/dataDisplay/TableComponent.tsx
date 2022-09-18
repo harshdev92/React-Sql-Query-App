@@ -30,7 +30,7 @@ const TableComponent = React.memo(({ query }: TableComponentProps) => {
       <section
         className={`col-end-3 row-start-3 row-end-4 text-white m-6`}
       >
-        <h1 className="text-center font-bold text-xl text-primary-dark">
+        <h1 className="text-center font-bold text-xl text-primary-color">
           Something Went Wrong{" "}
           <span role="img" aria-label="sad face">
             😔
@@ -45,8 +45,8 @@ const TableComponent = React.memo(({ query }: TableComponentProps) => {
       >
         {data.length > 0 ? (
           <>
-            <p className="text-primary-dark">
-              Query took:{" "}
+            <p className="text-primary-color">
+              Reponse Time:{" "}
               <span className="font-bold">{`${runtime.toFixed(2)} ms`}</span>
             </p>
             <Table

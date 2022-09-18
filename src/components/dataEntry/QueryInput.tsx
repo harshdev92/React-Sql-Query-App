@@ -20,14 +20,15 @@ const QueryInput = ({setQuery, value, setValue} : QueryInputProps) =>  {
   };
 
   const onSubmit = () => {
-    var Z = value.toLowerCase().slice(value.indexOf("from") + "from".length);
-    setQuery(Z.split(" ")[1]);
+    let lowerCaseValue = value.toLowerCase()
+    let formattedValue = lowerCaseValue.slice(lowerCaseValue.indexOf("from") + "from".length);
+    setQuery(formattedValue.split(" ")[1]);
   };
 
 
   return (
     <main
-      className={`col-end-3 row-start-2 row-end-3 mx-6 my-12 lg:mx-12`}
+      className={`col-end-3 row-start-2 row-end-3 mx-6 my-12 lg:mx-12 w-2/4`}
     >
       <label htmlFor="query-editor">
         <AceEditor
@@ -46,7 +47,7 @@ const QueryInput = ({setQuery, value, setValue} : QueryInputProps) =>  {
         fontSize={16}
         minLines={15}
         maxLines={10}
-        width="50%"
+        width="100%"
         showPrintMargin={false}
         showGutter
         placeholder="Write your Query here..."

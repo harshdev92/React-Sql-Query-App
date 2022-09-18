@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PreBuildQueryList from './components/dataDisplay/PreBuildQueryList';
 import TableComponent from './components/dataDisplay/TableComponent';
 import QueryInput from './components/dataEntry/QueryInput';
 import Header from './components/layout/Header';
@@ -6,15 +7,18 @@ import Header from './components/layout/Header';
 
 function App() {
   const [query, setQuery] = useState<string>("");
-  const [value, setValue] = useState<string>("select * from customers");
+  const [value, setValue] = useState<string>("SELECT * FROM customers");
   return (
     <>
      <Header/>
-     <QueryInput 
-       setQuery={setQuery}
-       value={value}
-       setValue={setValue}
-     />
+     <div className='flex'>
+      <QueryInput 
+        setQuery={setQuery}
+        value={value}
+        setValue={setValue}
+      />
+      <PreBuildQueryList setQuery={setQuery} setValue={setValue} />
+     </div>
      {query ? <TableComponent query={query} /> : null}
     </>
   );
