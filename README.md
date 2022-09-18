@@ -1,7 +1,10 @@
 # React Sql Query App - Frontend Module
 This respository hosts the codebase for the React Sql Query App - Frontend.
-**Libraray**
-this is project is using react js.
+
+##  Tech Stack
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ## Demo
 
