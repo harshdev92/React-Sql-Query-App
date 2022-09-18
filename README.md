@@ -5,7 +5,7 @@ This respository hosts the codebase for the React Sql Query App - Frontend.
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-typescript-blue)
+![TypeScript](https://img.shields.io/badge/-Typescript-blue)
 
 
 ## Demo
