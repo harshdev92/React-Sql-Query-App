@@ -10,6 +10,8 @@ This respository hosts the codebase for the React Sql Query App - Frontend.
 
 <a href="https://github.com/rishipurwar1/coding-space" target="blank">
 <img src="https://img.shields.io/website?url=https://www.codingspace.codes&logo=github&style=flat-square" />
+<img src="[https://img.shields.io/website?url=https://www.codingspace.codes&logo=github&style=flat-square](https://img.shields.io/badge/-typescript-blue)" />
+  
 </a>
 
 **Introduction**
