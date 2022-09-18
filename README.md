@@ -3,8 +3,20 @@ This respository hosts the codebase for the React Sql Query App - Frontend.
 **Libraray**
 this is project is using react js.
 
+## Demo
+
+<a href="https://github.com/rishipurwar1/coding-space" target="blank">
+<img src="https://img.shields.io/website?url=https://www.codingspace.codes&logo=github&style=flat-square" />
+</a>
+
 **Introduction**
 - This application is used for quering database.this support sql query and display data in table with option to download data in csv and json format.
+## Features
+- User can get data using predefine queries or sql query Editor.
+- Sorting Feature can be used in table.
+- User can go different pages using pagination
+- User can download sql queries resule in csv and json format.
+
 
 **Performance Matrix**
 
