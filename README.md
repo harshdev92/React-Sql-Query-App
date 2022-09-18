@@ -10,7 +10,7 @@ this is project is using react js.
 
 ![image](https://user-images.githubusercontent.com/35390781/190888030-4bfe5f82-526a-4a99-b80c-6975a3bbaa1c.png)
 
-** Steps taken to Improve Perfomance **
+**Steps taken to Improve Perfomance**
 - Use caching mechanism of react (React.memo, useMemo)
 
 **Folder Structure**
