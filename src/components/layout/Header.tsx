@@ -18,7 +18,7 @@ const Header = () => {
 
               <a
                 className="text-gray-300 hover:text-white py-2 rounded-md text-sm font-medium"
-                href=""
+                href="https://github.com/harshdev92/React-Sql-Query-App"
                 target="_blank"
                 rel="noreferrer"
                 title="github repository"

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import TABLE_NAMES from "../../constants/tableName";
 
 
